@@ -2,6 +2,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import flwr as fl
 
+from pathlib import Path
 
 def main() -> None:
     # Load and compile model for
@@ -26,7 +27,12 @@ def main() -> None:
     )
 
     # Start Flower server for four rounds of federated learning
-    fl.server.start_server("[::]:8080", config={"num_rounds": 3}, strategy=strategy)
+    fl.server.start_server("127.0.0.1:8080", config={"num_rounds": 3}, strategy=strategy,certificates=(
+        Path("certificates/ca.crt").read_bytes(),
+        Path("certificates/server.pem").read_bytes(),
+        Path("certificates/server.key").read_bytes()
+    )
+)
 
 
 # def get_eval_fn(model):
