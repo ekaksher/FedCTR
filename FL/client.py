@@ -6,7 +6,8 @@ from pathlib import Path
 from deepctr.models import AutoInt
 import pickle
 import pandas as pd
-
+import sys
+id = int(sys.argv[1])
 # Make TensorFlow logs less verbose
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 NUM_CLIENTS = 1000
@@ -27,8 +28,8 @@ model.compile(optimizer = 'adam',
               metrics = ['AUC'])
 
 class CifarClient(fl.client.NumPyClient):
-    def __init__(self,cid):
-        self.cid = cid
+    def __init__(self,cid=1):
+        self.cid = id
         idx = len(data)//NUM_CLIENTS
         s = (int(cid)-1)*idx
         f = s+idx
