@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "icon" href ="{{url_for('static',filename='../static/assets/favicon.png')}}" type = "image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/prediction.css')}}">
+        <title>
+            CTR Results
+        </title>
+    </head>
+    <body>
+        <center>
+            <h1>Prediction Results From AutoInt Model</h1>
+            <hr class="my-4" id="hrrule" size="2px">
+            <div>
+                <center>
+                    <img src="{{url_for('static',filename='../static/assets/'+img_name)}}" class="ad-img">
+                </center>
+                <p>Probabilty Of User Clicking This Advertisement : {{pred}}%.</p>
+            </div>
+            <center>
+                <a href="{{url_for('main')}}"><button class="button button1"><span>Home Page</span> </button></a>
+            </center>
+        </center>
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "icon" href ="{{url_for('static',filename='../static/assets/favicon.png')}}" type = "image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/main.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="{{url_for('static',filename='../static/scripts/toggleFunc.js')}}"></script>
+        <script src="{{url_for('static',filename='../static/scripts/sendData.js')}}"></script>
+        <title>
+            CTR Prediction
+        </title>
+    </head>
+    <center>
+        <h1 >SELECTED USER PROFILE : <i onclick="toggleFunc(this)" class="fa-solid fa-basketball"></i>
+        <hr class="my-4" id="hrrule" size="2px">
+        </h1>
+        <h3 id="userProfile">Athlete</h3>
+        <div id="profileDiv">Features : [Banner Position,Site Id, Site Domain, Site Category, Site Id, App Id, App Domain, App Category, Device Id, DeivceType, Connection Type]<br>
+            User Features: [Age, Site History, History Category, Sex, Location, Ad Product Price, Previous Ad Click History Encoded Variables]</div><br>
+    <div class="row">
+        <div class="column">
+          <img src="{{url_for('static',filename='../static/assets/img1.jpg')}}" id="1" class="ad-img" onclick="sendData(this.id)">
+          <img src="{{url_for('static',filename='../static/assets/img2.jpg')}}" id="2" class="ad-img" onclick="sendData(this.id)">
+          <img src="{{url_for('static',filename='../static/assets/img3.jpg')}}" id="3" class="ad-img" onclick="sendData(this.id)">
+          <img src="{{url_for('static',filename='../static/assets/img4.jpg')}}" id="4" class="ad-img" onclick="sendData(this.id)">
+        </div>
+        <div class="column">
+          <img src="{{url_for('static',filename='../static/assets/img5.jpg')}}" id="5" class="ad-img" onclick="sendData(this.id)">
+          <img src="{{url_for('static',filename='../static/assets/img6.jpg')}}" id="6" class="ad-img" onclick="sendData(this.id)">
+          <img src="{{url_for('static',filename='../static/assets/img7.jpg')}}" id="7" class="ad-img" onclick="sendData(this.id)">
+          <img src="{{url_for('static',filename='../static/assets/img8.jpg')}}" id="8" class="ad-img" onclick="sendData(this.id)">
+        </div>        
+    </div>
+    </center>
+    <script src="{{url_for('static',filename='../static/scripts/makeActive.js')}}"></script>
+    </body>
+</html>
